@@ -1,0 +1,13 @@
+<h1 class="page-title">L'équipe</h1>
+
+<%
+admins = User.where("is_admin = '1'")
+
+admins.each do |user_admin|
+%>
+<article>
+	<h3 class="user_name"><%= user_admin.first_name %></h3>	
+</article>
+<%
+end
+%>
