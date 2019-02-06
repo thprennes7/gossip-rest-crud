@@ -1,9 +1,7 @@
 class Potin < ApplicationRecord
 	validates :title,
-		presence: true,
-		length: {in: 3..14}
+		presence: true
 	validates :content,
-		presence: true,
-		length: {minimum: 25}
+		presence: true
 	belongs_to :user
 end

@@ -1,0 +1,16 @@
+<div class="title-container">
+<h1 class="page-title">Gossips</h1>
+<%= link_to "Nouveau potin", new_gossip_path, class:"article-btn" %>
+</div>
+<%
+@all_gossips.each do |potin|
+%>
+<article>
+	<h3 class="user-name"><%= potin.user.first_name %> <%= potin.user.last_name %></h3>
+	<h4 class="desc-title"><%= potin.title %></h4>
+	<p class="desc"><%= potin.content %></p>
+	<%= link_to "Lien vers le potin", gossip_path(potin.id), class:"article-btn" %>
+</article>
+<%
+end
+%>

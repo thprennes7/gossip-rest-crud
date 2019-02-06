@@ -1,0 +1,15 @@
+<h1 class="page-title">Membre</h1>
+
+<%
+if @selected_user != nil
+%>
+
+<div class="show-container">
+	<h3 class="user-name"><%= @selected_user.first_name %> <%= @selected_user.last_name %></h3>
+	<h4 class="desc-title">Description :</h4>
+	<p class="show-description"><%= @selected_user.description %></p>
+</div>
+
+<%
+end
+%>

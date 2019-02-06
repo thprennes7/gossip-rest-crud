@@ -68,11 +68,13 @@ main {
 	background-color: #DFDFDF;
 	padding: 10px;
 }
-
 .page-title {
 	font-size: 1.7rem;
 }
-
+.title-container {
+	display: flex;
+	justify-content: space-between;
+}
 article {
 	width: 90%;
 	border: 1px solid #2F2F2F;
@@ -97,4 +99,17 @@ article {
 }
 .desc-title {
 	font-size: 1.1rem;
+}
+.desc, .desc-title {
+	max-width: 80%;
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+.show-container {
+	width: 80%;
+	margin: auto;
+}
+.show-description {
+
 }
