@@ -1,0 +1,14 @@
+<h1 class="title-page">Membres</h1>
+
+<%
+@all_users.each do |user|
+%>
+<article>
+	<h3 class="user-name"><%= user.first_name %> <%= user.last_name %></h3>
+	<h4 class="desc-title">Description :</h4>
+	<p class="desc"><%= user.description %></p>
+	<%=link_to "Lien vers le profil", user_path(user.id), class:"article-btn" %>
+</article>
+<%
+end
+%>
