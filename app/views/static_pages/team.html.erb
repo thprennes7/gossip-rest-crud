@@ -6,7 +6,10 @@ admins = User.where("is_admin = '1'")
 admins.each do |user_admin|
 %>
 <article>
-	<h3 class="user_name"><%= user_admin.first_name %></h3>	
+	<h3 class="user-name"><%= user_admin.first_name %> <%= user_admin.last_name %></h3>
+	<h4 class="desc-title">Description :</h4>
+	<p class="desc"><%= user_admin.description %></p>
+	<%=link_to "Lien vers le profil", user_path(user_admin.id), class:"article-btn" %>
 </article>
 <%
 end

@@ -12,13 +12,17 @@
 }
 a, a:hover, a:visited {
 	text-decoration: none;
-	color: black;
 }
 ul {
 	list-style:none;
 }
 /* --- Générale --- */
-
+html, body, #wrapper {
+	height: 100%
+}
+#wrapper {
+	background-color: #EFEFEF;
+}
 
 /* --- Header des familles --- */
 
@@ -32,6 +36,7 @@ nav {
 	align-items: center;
 	padding: 20px;
 	height: 100%;
+	background-color: #F6F6F6;
 }
 .nav-menu {
 	display: flex;
@@ -40,6 +45,56 @@ nav {
 .nav-item {
 	padding: 0 10px;
 }
-.nav-title {
+.nav-title, .nav-title:visited {
 	font-size: 1.8rem;
+	color: #454545;
+}
+.nav-title:hover {
+	color: #353535;
+}
+.nav-link, .nav-link:visited {
+	font-size: 1.2rem;
+	color: #7F7F7F;
+}
+.nav-link:hover {
+	color: #6F6F6F;
+}
+
+/* --- Main --- */
+
+main {
+	width: 90%;
+	margin: auto;
+	background-color: #DFDFDF;
+	padding: 10px;
+}
+
+.page-title {
+	font-size: 1.7rem;
+}
+
+article {
+	width: 90%;
+	border: 1px solid #2F2F2F;
+	margin: 10px auto;
+	border-radius: 5px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+}
+.article-btn, .article-btn:visited {
+	align-self: flex-end;
+	color: #F1F1F1;
+	background: linear-gradient(#4D56FF, #343AFF);
+	padding: 5px;
+	border-radius: 5px;
+}
+.article-btn:hover {
+	background: linear-gradient(#8D8D8D, #969696);
+}
+.user-name {
+	font-size: 1.3rem;
+}
+.desc-title {
+	font-size: 1.1rem;
 }
