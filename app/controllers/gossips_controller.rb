@@ -3,10 +3,10 @@ class GossipsController < ApplicationController
 		@all_gossips = Potin.all
 	end
 	def show
-		if Potin.find(params[:id]).present
-			@selected_gossip = Potin.find(params[:id])
-		else
-			@selected_gossip = nil
-		end
+		@selected_gossip = Potin.find(params[:id])
+	end
+	def create
+		p = Potin.create(title: params[:title], content: params[:content], user_id: User.all.sample.id)
+		redirect_to gossips_path
 	end
 end

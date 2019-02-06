@@ -1,4 +1,9 @@
+<h1 class="page-title">Créer un potin</h1>
 
-
-<% form_tag gossips_path, :methode=>:post, :class=>'form' do%>
+<%= form_tag(gossips_path, :methode=>:post) do%>
+<%= label_tag('title', 'Titre', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('title', nil, :class=>'field-tag form-item tag-row-1')%>
+<%= label_tag('content', 'Potin', :class=>'label-tag form-item tag-row-2')%>
+<%= text_area_tag('content', nil, :class=>'field-tag text-tag form-item tag-row-2')%>
+<%= submit_tag('Créer', :class=>'submit-tag form-item article-btn')%>
 <% end %>
