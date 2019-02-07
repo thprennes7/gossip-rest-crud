@@ -1,24 +1,32 @@
-# README
+# Bienvenue sur notre Gossip Project ! 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+!(https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif)
 
-Things you may want to cover:
+## Comment y accéder ?
 
-* Ruby version
+Voici le lien de notre app Heroku : 
 
-* System dependencies
+Sinon, voici les quelques étapes pour y accéder : 
 
-* Configuration
+- <code> $ git clone https://github.com/thprennes7/gossip-rest-crud </code>
 
-* Database creation
+- <code> $ cd gossip-rest-crud </code>
 
-* Database initialization
+- <code> $ bundle </code>
 
-* How to run the test suite
+- <code> $ rails db:drop </code>
 
-* Services (job queues, cache servers, search engines, etc.)
+- <code> $ rails db:create </code>
 
-* Deployment instructions
+- <code> $ rails db:migrate </code>
 
-* ...
+- <code> $ rails server </code>
+
+- Et la dernière étape : allez sur le localhost:3000 
+
+## À vous de jouer ! 
+
+Prenez le temps de vous inscrire, créer des potins, les éditer, les supprimer, les commenter... 
+Bref faites des tests et à tout de suite ! 
+
+!(https://media.giphy.com/media/1X7hktuJcSqIollFII/giphy.gif)
