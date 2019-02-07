@@ -5,7 +5,29 @@
 	<h3 class="user-name"><%= potin.user.first_name %> <%= potin.user.last_name %></h3>
 	<h4 class="desc-title"><%= potin.title %></h4>
 	<p class="desc"><%= potin.content %></p>
+	<p class="desc">Nombre de commmentaires : <%= potin.comments.count %></p>
+	<p class="desc">Nombre de likes : <%= potin.likes.count %></p>
 	<%= link_to "Lien vers le potin", gossip_path(potin.id), class:"article-btn" %>
+	<% unless current_user
+
+		else
+			is_liked = 0
+			@all_likes.each do |like|
+				if like.user_id == session[:user_id] && like.potin_id == potin.id
+				%>
+				<%= form_tag(like_path(potin.id), method: 'delete') do %>
+				<%= submit_tag('Unlike', :class=>'submit-tag form-item article-btn') %>
+				<% end %>
+				<% is_liked = 1
+				end
+			end %>
+			<% if is_liked == 0 %>
+			<%= form_tag(likes_path, method: 'post') do %>
+			<%= hidden_field_tag('id', potin.id) %>
+			<%= submit_tag('Like', :class=>'submit-tag form-item article-btn') %>
+			<% end %>
+			<% end
+		end %> 
 </article>
 
 <% end %>
