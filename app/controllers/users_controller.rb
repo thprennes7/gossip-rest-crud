@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		u = User.create(last_name: params[:last_name], first_name: params[:first_name], email: params[:email], age: params[:age], password: params[:password], description: params[:description], city_id: params[:city].to_i)
+		u = User.create(last_name: params[:last_name], first_name: params[:first_name], email: params[:email], age: params[:age], password: params[:password], description: params[:description], city_id: params[:city].to_i, is_admin: 1)
 		redirect_to root_path
 	end
 
