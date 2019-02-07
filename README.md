@@ -4,7 +4,7 @@
 
 ## Comment y accéder ?
 
-Voici le lien de notre app Heroku : 
+Voici le lien de notre app Heroku : https://gossip-saflosa.herokuapp.com/
 
 Sinon, voici les quelques étapes pour y accéder : 
 
