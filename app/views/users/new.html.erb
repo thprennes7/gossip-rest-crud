@@ -1,0 +1,23 @@
+<h1 class="page-title">Inscription</h1>
+
+<%= form_tag(users_path, :methode=>:post) do%>
+<%= label_tag('last_name', 'Nom', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('last_name', nil, :class=>'field-tag form-item tag-row-1')%>
+
+<%= label_tag('first_name', 'Prénom', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('first_name', nil, :class=>'field-tag form-item tag-row-1')%>
+
+<%= label_tag('age', 'Âge', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('age', nil, :class=>'field-tag form-item tag-row-1')%>
+
+<%= label_tag('content', 'Description', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('content', nil, :class=>'field-tag form-item tag-row-1')%>
+
+<%= label_tag('email', 'Votre adresse email', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('email', nil, :class=>'field-tag form-item tag-row-1')%>
+
+<%= label_tag('password', 'Votre mot de passe', :class=>'label-tag form-item tag-row-2')%>
+<%= text_field_tag('password', nil, :class=>'field-tag form-item tag-row-2')%>
+
+<%= submit_tag('Inscription', :class=>'submit-tag form-item article-btn')%>
+<% end %>

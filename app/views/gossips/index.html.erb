@@ -1,6 +1,11 @@
 <div class="title-container">
 <h1 class="page-title">Gossips</h1>
+<%
+unless current_user
+else
+%>
 <%= link_to "Nouveau potin", new_gossip_path, class:"article-btn" %>
+<% end %>
 </div>
 <%
 @all_gossips.each do |potin|

@@ -1,7 +1,7 @@
 require 'faker'
 
 20.times do
-	u = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Simpsons.quote, is_admin: 0)
+	u = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Simpsons.quote, is_admin: 0, password: "bonjour", email: "email@email.com", age: 23)
 end
 
 50.times do

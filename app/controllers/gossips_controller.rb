@@ -6,8 +6,14 @@ class GossipsController < ApplicationController
 		@selected_gossip = Potin.find(params[:id])
 	end
 	def create
-		p = Potin.create(title: params[:title], content: params[:content], user_id: User.all.sample.id)
-		redirect_to gossips_path
+		p = Potin.create(params)
+		p.user = User.find_by(id: session[:user_id])
+		if p.save
+			flash[:success] = "Potin bien créé !"
+			redirect_to gossips_path
+		else
+			render :new
+		end
 	end
 	def edit
 		@selected_gossip = Potin.find(params[:id])

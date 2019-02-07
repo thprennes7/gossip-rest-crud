@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 	get '/team', to: 'static_pages#team', as: 'team'
 	resources :gossips
 	resources :users
+	resources :sessions, only: [:new, :create, :destroy]
 end

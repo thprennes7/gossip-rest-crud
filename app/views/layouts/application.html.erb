@@ -18,11 +18,17 @@
             <li><a href="<%= team_path %>" class="nav-link nav-item">L'équipe</a></li>
             <li><a href="<%= users_path %>" class="nav-link nav-item">Membres</a></li>
             <li><a href="<%= contact_path %>" class="nav-link nav-item">Contact</a></li>
+            <% unless current_user %>
+              <li><a href="<%= new_user_path %>" class="nav-link nav-item">S'inscrire</a></li>
+              <li><a href="<%= new_session_path %>" class="nav-link nav-item">Se connecter</a></li>
+            <% else %>
+              <li><%= link_to "Se déconnecter", session_path(current_user), method: 'delete', class:"nav-link nav-item" %></li>
+            <% end %>
           </ul>
         </nav>
       </header>
       <main>
-        <%= yield %>    
+        <%= yield %>
       </main>
       <footer>
         <p>Made by oui club</p>

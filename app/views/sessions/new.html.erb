@@ -1,0 +1,9 @@
+<h1 class="page-title">Connectez-vous ici</h1>
+
+<%= form_tag(sessions_path, :methode=>:post) do%>
+<%= label_tag('email', 'Votre adresse email', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('email', nil, :class=>'field-tag form-item tag-row-1')%>
+<%= label_tag('password', 'Votre mot de passe', :class=>'label-tag form-item tag-row-2')%>
+<%= text_field_tag('password', nil, :class=>'field-tag form-item tag-row-2')%>
+<%= submit_tag('Connexion', :class=>'submit-tag form-item article-btn')%>
+<% end %>
