@@ -1,9 +1,11 @@
 class GossipsController < ApplicationController
 	def index
 		@all_gossips = Potin.all
+		@all_likes = Like.all
 	end
 	def show
 		@selected_gossip = Potin.find(params[:id])
+		@all_likes = Like.all
 		@selected_comments = nil
 		@selected_comments = Comment.where(potin: @selected_gossip)
 	end

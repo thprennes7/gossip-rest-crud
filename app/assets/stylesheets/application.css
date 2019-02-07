@@ -157,7 +157,9 @@ form {
 	height: 70px;
 	resize: none;
 }
-
+.select-tag {
+	
+}
 .submit-tag {
 	height: 40px;
 	width: 100px;

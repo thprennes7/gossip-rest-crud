@@ -14,7 +14,7 @@
 <%= text_field_tag('description', nil, :class=>'field-tag form-item tag-row-1')%>
 
 <%= label_tag('city', 'Votre ville', :class=>'label-tag form-item tag-row-1') %>
-<select class="field-tag form-item" name="city">
+<select class="field-tag form-item select-tag" name="city">
 <% @all_cities.each do |city| %>
 <option value="<%= city.id %>"><%= city.name %></option>
 <% end %>

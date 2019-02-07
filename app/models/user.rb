@@ -4,7 +4,7 @@ class User < ApplicationRecord
 	has_many :potins
 	has_secure_password
 	has_many :comments
-
+	has_many :likes
 	belongs_to :city 
 
 	validates :password,

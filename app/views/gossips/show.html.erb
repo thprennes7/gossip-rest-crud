@@ -2,10 +2,31 @@
 
 <div class="show-container">
 	<h3 class="user-name"><%= @selected_gossip.user.first_name %> <%= @selected_gossip.user.last_name %></h3>
+	<p class="desc">Nombre de likes : <%= @selected_gossip.likes.count %></p>
 	<h4 class="desc-title"><%= @selected_gossip.title %></h4>
 	<p class="show-description"><%= @selected_gossip.content %></p>
 </div>
 
+<% unless current_user
+
+		else
+			is_liked = 0
+			@all_likes.each do |like|
+				if like.user_id == session[:user_id] && like.potin_id == @selected_gossip.id
+				%>
+				<%= form_tag(like_path(@selected_gossip.id), method: 'delete') do %>
+				<%= submit_tag('Unlike', :class=>'submit-tag form-item article-btn') %>
+				<% end %>
+				<% is_liked = 1
+				end
+			end %>
+			<% if is_liked == 0 %>
+			<%= form_tag(likes_path, method: 'post') do %>
+			<%= hidden_field_tag('id', @selected_gossip.id) %>
+			<%= submit_tag('Like', :class=>'submit-tag form-item article-btn') %>
+			<% end %>
+			<% end
+		end %> 
 
 <% unless current_user
 else %>
