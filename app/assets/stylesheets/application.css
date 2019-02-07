@@ -101,7 +101,11 @@ article {
 	background: linear-gradient(#4D56FF, #343AFF);
 	border: none;
 	padding: 5px;
+	margin: 5px;
 	border-radius: 5px;
+}
+.btn-grey, .btn-grey:visited {
+	background: linear-gradient(#ACACAC, #B3B3B3);
 }
 .article-btn:hover {
 	background: linear-gradient(#8D8D8D, #969696);
@@ -122,8 +126,10 @@ article {
 	width: 80%;
 	margin: auto;
 }
-.show-description {
-
+.show-edit {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
 /* formulaires */
 form {

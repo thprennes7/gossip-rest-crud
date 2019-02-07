@@ -1,0 +1,9 @@
+<h1 class="page-title">Editer le potin</h1>
+
+<%= form_tag url_for(action: 'update'), method: 'patch' do%>
+<%= label_tag('title', 'Titre', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('title', @selected_gossip.title, :class=>'field-tag form-item tag-row-1')%>
+<%= label_tag('content', 'Potin', :class=>'label-tag form-item tag-row-2')%>
+<%= text_area_tag('content', @selected_gossip.content, :class=>'field-tag text-tag form-item tag-row-2')%>
+<%= submit_tag('Éditer', :class=>'submit-tag form-item article-btn')%>
+<% end %>
