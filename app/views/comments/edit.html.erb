@@ -1,0 +1,7 @@
+<h1 class="page-title">Editer le commentaire</h1>
+
+<%= form_tag url_for(action: 'update'), method: 'patch' do%>
+<%= label_tag('content', 'Votre commentaire :', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('content', @selected_comment.content, :class=>'field-tag form-item tag-row-1')%>
+<%= submit_tag('Éditer', :class=>'submit-tag form-item article-btn')%>
+<% end %>

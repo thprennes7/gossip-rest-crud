@@ -3,6 +3,7 @@ class User < ApplicationRecord
 	validates :last_name, presence: true
 	has_many :potins
 	has_secure_password
+	has_many :comments
 
 	belongs_to :city 
 

@@ -4,6 +4,8 @@ class GossipsController < ApplicationController
 	end
 	def show
 		@selected_gossip = Potin.find(params[:id])
+		@selected_comments = nil
+		@selected_comments = Comment.where(potin: @selected_gossip)
 	end
 	def create
 		p = Potin.create(title: params[:title], content: params[:content], user_id: session[:user_id], city_id: User.find_by(id: session[:user_id]).city.id)
