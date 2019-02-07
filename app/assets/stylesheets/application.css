@@ -133,24 +133,22 @@ article {
 }
 /* formulaires */
 form {
-	width: 90%;
+	width: 60%;
 	margin: 10px auto;
-	display: grid;
-	grid-template-columns: 10% 70%;
-	grid-template-rows: 50px 90px 90px;
-	padding: 0 20%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .form-item {
-	margin: 10px;
+	padding: 10px;
 }
 .label-tag {
 	display: flex;
 	justify-content: flex-end;
-	grid-column: 1;
+	width: 25%;
 }
 .field-tag {
-	grid-column: 2;
-	width: 100%;
+	width: 60%;
 	height: 30px;
 	border: none;
 	border-radius: 2px;
@@ -159,15 +157,8 @@ form {
 	height: 70px;
 	resize: none;
 }
-.tag-row-1 {
-	grid-row: 1;
-}
-.tag-row-2 {
-	grid-row: 2;
-}
+
 .submit-tag {
-	grid-column: 2;
-	grid-row: 3;
 	height: 40px;
 	width: 100px;
 	vertical-align: middle;
