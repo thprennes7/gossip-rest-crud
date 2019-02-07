@@ -14,16 +14,16 @@
 			@all_likes.each do |like|
 				if like.user_id == session[:user_id] && like.potin_id == @selected_gossip.id
 				%>
-				<%= form_tag(like_path(@selected_gossip.id), method: 'delete') do %>
-				<%= submit_tag('Unlike', :class=>'submit-tag form-item article-btn') %>
+				<%= form_tag(like_path(@selected_gossip.id), method: 'delete', class: 'like-form') do %>
+				<%= submit_tag('Unlike', :class=>'article-btn like-btn') %>
 				<% end %>
 				<% is_liked = 1
 				end
 			end %>
 			<% if is_liked == 0 %>
-			<%= form_tag(likes_path, method: 'post') do %>
+			<%= form_tag(likes_path, method: 'post', class: 'like-form') do %>
 			<%= hidden_field_tag('id', @selected_gossip.id) %>
-			<%= submit_tag('Like', :class=>'submit-tag form-item article-btn') %>
+			<%= submit_tag('Like', :class=>'article-btn like-btn') %>
 			<% end %>
 			<% end
 		end %> 
@@ -46,8 +46,8 @@ else %>
 
 <%= form_tag(comments_path, method: 'post') do %>
 	<%= hidden_field_tag('potin', @selected_gossip.id) %>
-	<%= label_tag('content', 'Nouveau commentaire', :class=>'label-tag form-item tag-row-1') %>
-	<%= text_field_tag('content', nil, :class=>'field-tag form-item tag-row-1')%>
+	<%= label_tag('content', 'Nouveau commentaire', :class=>'label-tag form-item') %>
+	<%= text_field_tag('content', nil, :class=>'field-tag form-item')%>
 	<%= submit_tag('Poster', :class=>'submit-tag form-item article-btn')%>
 	<% end %> 
 	<% end %>
