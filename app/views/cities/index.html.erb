@@ -1,0 +1,12 @@
+<h1 class="page-title">Les villes</h1>
+
+<%
+@all_cities.each do |city|
+%>
+
+<article>
+	<h3 class="user-name"><%= city.name %> </h3>
+	<%= link_to "Lien vers la ville", city_path(city.id), class:"article-btn" %>
+</article>
+
+<% end %>

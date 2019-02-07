@@ -10,8 +10,15 @@
 <%= label_tag('age', 'Âge', :class=>'label-tag form-item tag-row-1') %>
 <%= text_field_tag('age', nil, :class=>'field-tag form-item tag-row-1')%>
 
-<%= label_tag('content', 'Description', :class=>'label-tag form-item tag-row-1') %>
-<%= text_field_tag('content', nil, :class=>'field-tag form-item tag-row-1')%>
+<%= label_tag('description', 'Description', :class=>'label-tag form-item tag-row-1') %>
+<%= text_field_tag('description', nil, :class=>'field-tag form-item tag-row-1')%>
+
+<%= label_tag('city', 'Votre ville', :class=>'label-tag form-item tag-row-1') %>
+<select class="field-tag form-item" name="city">
+<% @all_cities.each do |city| %>
+<option value="<%= city.id %>"><%= city.name %></option>
+<% end %>
+</select>
 
 <%= label_tag('email', 'Votre adresse email', :class=>'label-tag form-item tag-row-1') %>
 <%= text_field_tag('email', nil, :class=>'field-tag form-item tag-row-1')%>

@@ -10,17 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_144215) do
+ActiveRecord::Schema.define(version: 2019_02_07_141110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "potins", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.bigint "user_id"
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_potins_on_city_id"
     t.index ["user_id"], name: "index_potins_on_user_id"
   end
 
@@ -28,12 +36,14 @@ ActiveRecord::Schema.define(version: 2019_02_06_144215) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "is_admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.text "description"
-    t.string "passowrd_digest"
+    t.string "password_digest"
     t.string "email"
     t.integer "age"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_users_on_city_id"
   end
 
 end

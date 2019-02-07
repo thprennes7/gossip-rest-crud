@@ -4,7 +4,12 @@ class User < ApplicationRecord
 	has_many :potins
 	has_secure_password
 
+	belongs_to :city 
+
 	validates :password,
 		presence: true,
 		length: {minimum: 6}
+
+	validates :email,
+		uniqueness: true
 end

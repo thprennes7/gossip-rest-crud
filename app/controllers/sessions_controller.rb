@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      redirect_to root_path
 
     else
       flash.now[:danger] = 'Invalid email/password combination'
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
 
   def destroy
    session.delete(:user_id)
+   redirect_to root_path
   end
 
 end
